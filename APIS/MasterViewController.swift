@@ -33,6 +33,10 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
         }
+        
+        
+        //
+        Networking.getEventsNearby();
     }
 
     override func didReceiveMemoryWarning() {

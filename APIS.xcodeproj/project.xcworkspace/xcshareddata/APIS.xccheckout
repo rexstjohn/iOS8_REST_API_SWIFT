@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>20DFD382-698A-459A-A102-B90E40555FD9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>APIS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4E99566924C1E269632787628ACC28FC6FCC4ADF</key>
+		<string>github.com:rexstjohn/iOS8_REST_API_SWIFT.git</string>
+		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
+		<string>https://github.com/Alamofire/Alamofire.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>APIS.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4E99566924C1E269632787628ACC28FC6FCC4ADF</key>
+		<string>../..</string>
+		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
+		<string>../..Alamofire</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:rexstjohn/iOS8_REST_API_SWIFT.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4E99566924C1E269632787628ACC28FC6FCC4ADF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4E99566924C1E269632787628ACC28FC6FCC4ADF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS8_REST_API_SWIFT</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS8_REST_API_SWIFTAlamofire</string>
+		</dict>
+	</array>
+</dict>
+</plist>
