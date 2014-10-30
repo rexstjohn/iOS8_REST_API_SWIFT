@@ -13,7 +13,7 @@ class Networking {
     
     // Get nearby events by a provided Zip Code
     class func getEventsNearby() {
-        Alamofire.request(.GET, "http://api.jambase.com/events", parameters: ["zipCode": "95128","page":"0","api_key": "65ftmfqrzasncw6sm97r2nv4" ])
+        Alamofire.request(.GET, "http://api.jambase.com/events", parameters: ["zipCode": "95128","page":"0","api_key": "YOUR_KEY_HERE" ])
             .responseJSON { (_, _, JSON, _) in
                 println(JSON)
         }
