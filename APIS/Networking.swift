@@ -9,15 +9,83 @@
 import Foundation
 import Alamofire
 
-class Networking {
+/**
+* Response Object Serializer Extension
+*/
+
+@objc public protocol ResponseObjectSerializable {
+    init(response: NSHTTPURLResponse, representation: AnyObject)
+}
+
+extension Alamofire.Request {
+    public func responseObject<T: ResponseObjectSerializable>(completionHandler: (NSURLRequest, NSHTTPURLResponse?, T?, NSError?) -> Void) -> Self {
+        let serializer: Serializer = { (request, response, data) in
+            let JSONSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
+            let (JSON: AnyObject?, serializationError) = JSONSerializer(request, response, data)
+            if response != nil && JSON != nil {
+                return (T(response: response!, representation: JSON!), nil)
+            } else {
+                return (nil, serializationError)
+            }
+        }
+        
+        return response(serializer: serializer, completionHandler: { (request, response, object, error) in
+            completionHandler(request, response, object as? T, error)
+        })
+    }
+}
+
+/**
+* Response Object Collection Extension
+*/
+
+@objc public protocol ResponseCollectionSerializable {
+    class func collection(#response: NSHTTPURLResponse, representation: AnyObject) -> [Self]
+}
+
+extension Alamofire.Request {
+    public func responseCollection<T: ResponseCollectionSerializable>(completionHandler: (NSURLRequest, NSHTTPURLResponse?, [T]?, NSError?) -> Void) -> Self {
+        let serializer: Serializer = { (request, response, data) in
+            let JSONSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
+            let (JSON: AnyObject?, serializationError) = JSONSerializer(request, response, data)
+            if response != nil && JSON != nil {
+                return (T.collection(response: response!, representation: JSON!), nil)
+            } else {
+                return (nil, serializationError)
+            }
+        }
+        
+        return response(serializer: serializer, completionHandler: { (request, response, object, error) in
+            completionHandler(request, response, object as? [T], error)
+        })
+    }
+}
+
+/**
+* Our Networking class
+*/
+
+final class Networking {
     
     // Get nearby events by a provided Zip Code
     class func getEventsNearby() {
-        Alamofire.request(.GET, "http://api.jambase.com/events", parameters: ["zipCode": "95128","page":"0","api_key": "65ftmfqrzasncw6sm97r2nv4" ])
-            .responseJSON { (_, _, JSON, _) in
-                println(JSON)
+        Alamofire.request(.GET, "http://api.jambase.com/events", parameters: ["zipCode": "95128","page":"0","api_key": "YOUR_KEY_HERE" ])
+            .responseCollection  { (_, _, events: EventCollection?, _) in
+                println(events)
         }
     }
+}
+
+/**
+* A few model objects
+*/
+
+final class EventCollection: ResponseCollectionSerializable {
+    
+    class func collection(#response: NSHTTPURLResponse, representation: AnyObject) -> [EventCollection]{
+        
+    }
+
 }
 
 final class Artist: ResponseObjectSerializable {

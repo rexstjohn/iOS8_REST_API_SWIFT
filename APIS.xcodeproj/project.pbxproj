@@ -17,7 +17,6 @@
 		36A17E7419FDC96700A8CBB9 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 36A17E6C19FDC87100A8CBB9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		36A17E7619FDCD5300A8CBB9 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A17E7519FDCD5300A8CBB9 /* Networking.swift */; };
 		36A17E7719FDCD5300A8CBB9 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A17E7519FDCD5300A8CBB9 /* Networking.swift */; };
-		36E9D4E019FECC4F008E109F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E9D4DF19FECC4F008E109F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +78,6 @@
 		36A17E0319FDC3B100A8CBB9 /* APISTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISTests.swift; sourceTree = "<group>"; };
 		36A17E6619FDC87100A8CBB9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		36A17E7519FDCD5300A8CBB9 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		36E9D4DF19FECC4F008E109F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +128,6 @@
 				36A17DF619FDC3B100A8CBB9 /* LaunchScreen.xib */,
 				36A17DE919FDC3B100A8CBB9 /* Supporting Files */,
 				36A17E7519FDCD5300A8CBB9 /* Networking.swift */,
-				36E9D4DF19FECC4F008E109F /* Extensions.swift */,
 			);
 			path = APIS;
 			sourceTree = "<group>";
@@ -295,7 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				36A17DF019FDC3B100A8CBB9 /* DetailViewController.swift in Sources */,
-				36E9D4E019FECC4F008E109F /* Extensions.swift in Sources */,
 				36A17DEE19FDC3B100A8CBB9 /* MasterViewController.swift in Sources */,
 				36A17DEC19FDC3B100A8CBB9 /* AppDelegate.swift in Sources */,
 				36A17E7619FDCD5300A8CBB9 /* Networking.swift in Sources */,
