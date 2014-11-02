@@ -69,23 +69,46 @@ final class Networking {
     
     // Get nearby events by a provided Zip Code
     class func getEventsNearby() {
-        Alamofire.request(.GET, "http://api.jambase.com/events", parameters: ["zipCode": "95128","page":"0","api_key": "YOUR_KEY_HERE" ])
-            .responseCollection  { (_, _, events: EventCollection?, _) in
+        Alamofire.request(.GET, "http://api.jambase.com/events",parameters: ["zipCode": "95128","page":"0","api_key": "KEY_HERE" ])
+            .responseCollection  { (_, _, events: [EventCollection]?, _) in
                 println(events)
         }
     }
 }
 
 /**
-* A few model objects
+* Simple Model Objects
 */
 
-final class EventCollection: ResponseCollectionSerializable {
+/**
+* This represents a collection of JamBase API Event models.
+*/
+final class EventCollection: ResponseObjectSerializable, ResponseCollectionSerializable {
     
-    class func collection(#response: NSHTTPURLResponse, representation: AnyObject) -> [EventCollection]{
+    var username: String!
+    var password: String!
+    
+    init() {
         
     }
-
+    
+    init(username: String, password: String) {
+        self.username = username
+        self.password = password
+    }
+    
+    required init(response: NSHTTPURLResponse, representation: AnyObject) {
+        self.username = representation.valueForKeyPath("username") as String
+        self.password = representation.valueForKeyPath("password") as String
+    }
+    
+    class func collection(#response: NSHTTPURLResponse, representation: AnyObject) -> [EventCollection] {
+        return []
+    }
+    
+    func toDic() -> Dictionary<String,AnyObject> {
+        return ["username": self.username, "password": self.password]
+    }
 }
 
 final class Artist: ResponseObjectSerializable {
